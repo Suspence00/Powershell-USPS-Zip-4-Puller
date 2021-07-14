@@ -28,10 +28,10 @@ $validatedAddress = Invoke-WebRequest $validateRequestURI
 
 # Modifies variables to validated data 
 $Address2 = ([xml]$validatedAddress).AddressValidateResponse.Address.Address2
-$Address1 =([xml]$validatedAddress).AddressValidateResponse.Address.Address1
-$City =([xml]$validatedAddress).AddressValidateResponse.Address.City
-$State =([xml]$validatedAddress).AddressValidateResponse.Address.State
-$Zip5 =([xml]$validatedAddress).AddressValidateResponse.Address.Zip5
+$Address1 = ([xml]$validatedAddress).AddressValidateResponse.Address.Address1
+$City = ([xml]$validatedAddress).AddressValidateResponse.Address.City
+$State = ([xml]$validatedAddress).AddressValidateResponse.Address.State
+$Zip5 = ([xml]$validatedAddress).AddressValidateResponse.Address.Zip5
 
 # Zip4 API request
 $zip4URI ="https://secure.shippingapis.com/ShippingAPI.dll?API=ZipCodeLookup&XML=<ZipCodeLookupRequest USERID=$USERID><Address ID=$addressID><Address1>$Address1</Address1><Address2>$Address2</Address2><City>$City</City><State>$State</State><Zip5>$Zip5</Zip5><Zip4></Zip4></Address></ZipCodeLookupRequest>" 
