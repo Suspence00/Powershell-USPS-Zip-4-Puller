@@ -9,8 +9,9 @@
 $USERID = ""
 
 #Enter Address Information
-$Address1 = "211 NE Revere Ave" 
-$Address2 = ""
+#Note: Address2 is the main street address, Address1 is the Suite/Apartment
+$Address2 = "211 NE Revere Ave" 
+$Address1 = ""
 $City = "Bend"
 $State = "OR"
 $Zip5 = "97701"
@@ -20,7 +21,10 @@ if ($USERID -eq ""){
 	Write-Host "No User ID Provided, please modify script before running" -ForegroundColor Red
 	break;}
 	
-	else{$USERID = '"'+$USERID+'"'}	
+$USERID = '"'+$USERID+'"'
+
+#Sets Address ID - Needed
+$addressID = '"0"'
 
 # Request Address
 $validateRequestURI ="https://secure.shippingapis.com/ShippingAPI.dll?API=Verify&XML=<AddressValidateRequest USERID=$USERID><Address ID=$addressID><Address1>$Address1</Address1><Address2>$Address2</Address2><City>$City</City><State>$State</State><Zip5>$Zip5</Zip5><Zip4></Zip4></Address></AddressValidateRequest>" 
