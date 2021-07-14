@@ -1,6 +1,6 @@
 #Code by Spencer
 #7.14.2021
-#Powerhsell Tool to utilize USPS Web Tools API for Zip+4 Information
+#Powershell Tool to utilize USPS Web Tools API for Zip+4 Information
 # 1. Validates address via Web Request
 # 2. Queries for Zip4 based on validated information
 
