@@ -4,3 +4,7 @@ User must obtain a valid User ID for USPS's Web Tools API by registering through
 
 After obtaining your valid user ID, you can input it into this script to pull the Zip 4 from an address. The Street, City, and State are mandatory with Street 2 / Zip+5 recommended for accuracy.
 
+1. Download poshuspszip4.ps1
+2. Run from powershell
+3. ???
+4. Zip+4
