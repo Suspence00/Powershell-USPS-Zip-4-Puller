@@ -4,7 +4,8 @@
 # 1. Validates address via Web Request
 # 2. Queries for Zip4 based on validated information
 
-# User must obtain a valid User ID for USPS's Web Tools API by registering through USPS's website. Information for that can be found here: https://www.usps.com/business/web-tools-apis/
+# User must obtain a valid User ID for USPS's Web Tools API by registering through USPS's website. 
+#Information for that can be found here: https://www.usps.com/business/web-tools-apis/
 $USERID = ""
 
 #Enter Address Information
