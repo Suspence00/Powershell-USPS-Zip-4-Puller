@@ -8,8 +8,9 @@ Docs Referenced: https://www.usps.com/business/web-tools-apis/address-informatio
 After obtaining your valid user ID, you can input it into this script to pull the Zip 4 from an address. Only the main street address is needed, but everything else is recommended for accuracy.
 
 1. Download poshuspszip4.ps1
-2. Run from powershell
-3. ???
-4. Zip+4
+2. Modift USERID and Address Variables
+3. Run from powershell
+4. ???
+5. Zip+4
 
 ![image](https://user-images.githubusercontent.com/20601593/125591594-5196f76c-749d-47bb-9725-eb87be49846d.png)
