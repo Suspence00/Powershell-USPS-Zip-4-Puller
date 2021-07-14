@@ -5,7 +5,7 @@
 # 2. Queries for Zip4 based on validated information
 
 # User must obtain a valid User ID for USPS's Web Tools API by registering through USPS's website. 
-#Information for that can be found here: https://www.usps.com/business/web-tools-apis/
+# Information for that can be found here: https://www.usps.com/business/web-tools-apis/
 $USERID = ""
 
 #Enter Address Information
@@ -15,33 +15,30 @@ $City = "Bend"
 $State = "OR"
 $Zip5 = "97701"
 
-#Adds Quotes around USERID - needed or it breaks. Also checks to make sure it's not blank.
+# Adds Quotes around USERID - needed or it breaks. Also checks to make sure it's not blank.
 if ($USERID -eq ""){
 	Write-Host "No User ID Provided, please modify script before running" -ForegroundColor Red
 	break;}
 	
 	else{$USERID = '"'+$USERID+'"'}	
-		
-# Must be 0 as per Docs
-$addressID = '"0"'
 
-#Request Address
+# Request Address
 $validateRequestURI ="https://secure.shippingapis.com/ShippingAPI.dll?API=Verify&XML=<AddressValidateRequest USERID=$USERID><Address ID=$addressID><Address1>$Address1</Address1><Address2>$Address2</Address2><City>$City</City><State>$State</State><Zip5>$Zip5</Zip5><Zip4></Zip4></Address></AddressValidateRequest>" 
 $validatedAddress = Invoke-WebRequest $validateRequestURI
 
-#Modifies variables to validated data 
+# Modifies variables to validated data 
 $Address2 = ([xml]$validatedAddress).AddressValidateResponse.Address.Address2
 $Address1 =([xml]$validatedAddress).AddressValidateResponse.Address.Address1
 $City =([xml]$validatedAddress).AddressValidateResponse.Address.City
 $State =([xml]$validatedAddress).AddressValidateResponse.Address.State
 $Zip5 =([xml]$validatedAddress).AddressValidateResponse.Address.Zip5
 
-#zip4 API request
+# Zip4 API request
 $zip4URI ="https://secure.shippingapis.com/ShippingAPI.dll?API=ZipCodeLookup&XML=<ZipCodeLookupRequest USERID=$USERID><Address ID=$addressID><Address1>$Address1</Address1><Address2>$Address2</Address2><City>$City</City><State>$State</State><Zip5>$Zip5</Zip5><Zip4></Zip4></Address></ZipCodeLookupRequest>" 
 $zip4Request = Invoke-WebRequest $zip4URI	
 $zip4 = ([xml]$zip4Request).ZipCodeLookupResponse.Address.Zip4
 
-#final output
+# Final output
 Write-Host "The address has been Validated, pulling Zip+4..."  -ForegroundColor Blue
 Write-Host "Full Inforomation:" -ForegroundColor Blue
 Write-Host "Address 1: $Address2" -ForegroundColor Yellow
