@@ -11,3 +11,5 @@ After obtaining your valid user ID, you can input it into this script to pull th
 2. Run from powershell
 3. ???
 4. Zip+4
+
+![image](https://user-images.githubusercontent.com/20601593/125591594-5196f76c-749d-47bb-9725-eb87be49846d.png)
