@@ -10,11 +10,11 @@ $USERID = ""
 
 #Enter Address Information
 #Note: Address2 is the main street address, Address1 is the Suite/Apartment
-$Address2 = "700 State Highway" 
+$Address2 = "" 
 $Address1 = ""
-$City = "Lewisville"
-$State = "TX"
-$Zip5 = "75067"
+$City = ""
+$State = ""
+$Zip5 = ""
 
 # Adds Quotes around USERID - needed or it breaks. Also checks to make sure it's not blank.
 if ($USERID -eq ""){
